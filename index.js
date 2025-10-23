@@ -4,7 +4,7 @@ const topImage = document.getElementById("top-img");
 const bottomImage = document.getElementById("bottom-img");
 const carouselItems = document.querySelectorAll("[data-item]");
 const carouselButtons = document.querySelectorAll("[data-carousel-btn]")
-
+const learnMoreButtons = document.querySelectorAll("[data-model-btn]")
 
 carouselButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -71,3 +71,9 @@ left.addEventListener("click", () => {
     }, {once: true});
 })
 
+learnMoreButtons.forEach(btn => {
+    console.log(btn.dataset.modelBtn);
+    btn.addEventListener("click", () => {
+        window.location.href = `model.php?id=${btn.dataset.modelBtn}`;
+    })
+})

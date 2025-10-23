@@ -1,6 +1,11 @@
 <?php
 require_once "include/session_config.inc.php";
 require_once "include/register_view.inc.php";
+
+if (isset($_SESSION["user_id"])) {
+    header("Location: index.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>

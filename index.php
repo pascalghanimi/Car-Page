@@ -1,3 +1,11 @@
+<?php
+require_once "include/dbh.inc.php";
+require_once "include/comment_model.inc.php";
+require_once "include/comment_contr.inc.php";
+require_once "include/session_config.inc.php";
+require_once "include/comment_view.inc.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,43 +42,48 @@
         <section class="cars">
             <div class="carousel">
                 <div class="carousel-item" data-item="1">
-                    <img src="images/car1.jpg" alt="">
+                    <img src="images/car7.jpg" alt="">
                     <div class="carousel-item-info">
-                        <p class="model-name">Model Alpha</p>
-                        <p class="info-text">Available for 199$/month</p>
-                        <button class="info-btn">Learn More</button>
+                        <p class="model-name">Alpha A3
+                        </p>
+                        <p class="info-text">Available for 499$/month</p>
+                        <button class="info-btn" data-model-btn="0">Learn More</button>
                     </div>
                 </div>
                 <div class="carousel-item" data-item="2">
-                    <img src="images/car2.jpg" alt="">
+                    <img src="images/car8.jpg" alt="">
                     <div class="carousel-item-info">
-                        <p class="model-name">Model Alpha</p>
-                        <p class="info-text">Available for 199$/month</p>
-                        <button class="info-btn">Learn More</button>
+                        <p class="model-name">Alpha A4
+                        </p>
+                        <p class="info-text">Available for 399$/month</p>
+                        <button class="info-btn" data-model-btn="1">Learn More</button>
                     </div>
                 </div>
                 <div class="carousel-item" data-item="3">
-                    <img src="images/car3.jpg" alt="">
+                    <img src="images/car9.jpg" alt="">
                     <div class="carousel-item-info">
-                        <p class="model-name">Model Alpha</p>
-                        <p class="info-text">Available for 199$/month</p>
-                        <button class="info-btn">Learn More</button>
+                        <p class="model-name">Alpha A4X
+                        </p>
+                        <p class="info-text">Available for 699$/month</p>
+                        <button class="info-btn" data-model-btn="2">Learn More</button>
                     </div>
                 </div>
                 <div class="carousel-item" data-item="4">
-                    <img src="images/car4.jpg" alt="">
+                    <img src="images/car10.jpg" alt="">
                     <div class="carousel-item-info">
-                        <p class="model-name">Model Alpha</p>
-                        <p class="info-text">Available for 199$/month</p>
-                        <button class="info-btn">Learn More</button>
+                        <p class="model-name">Alpha A5 GT
+                        </p>
+                        <p class="info-text">Available for 299$/month</p>
+                        <button class="info-btn" data-model-btn="3">Learn More</button>
                     </div>
                 </div>
                 <div class="carousel-item" data-item="5">
-                    <img src="images/car5.jpg" alt="">
+                    <img src="images/car11.jpg" alt="">
                     <div class="carousel-item-info">
-                        <p class="model-name">Model Alpha</p>
+                        <p class="model-name">Alpha A6 Performance
+                        </p>
                         <p class="info-text">Available for 199$/month</p>
-                        <button class="info-btn">Learn More</button>
+                        <button class="info-btn" data-model-btn="4">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -114,7 +127,7 @@
         <section class="team-section">
             <div class="team-wrapper">
                 <div class="teams-heading">
-                    <h2>ENTRY OPPORTUNITIES</h2>
+                    <h2>TEAM MEMBERS</h2>
                     <p>Whether you’re a pupil, student, or direct entrant – we welcome passionate talents who are eager to reinvent the mobility of the future. Whatever your heart beats for – with us, everyone has the opportunity to share their passion.</p>
                 </div>
                 <div class="team-image-container">
@@ -156,6 +169,25 @@
                 </div>
             </div>
         </section>
+        <section id="comments">
+            <div class="comment-wrapper">
+                <div class="comments-heading">
+                    <h2>LEAVE US A COMMENT</h2>
+                    <p>Have any thoughts or feedback? Leave us a comment and let us know what you think — we’d love to hear from you!</p>
+                </div>
+                <form action="include/comment.inc.php" method="post">
+                    <label for="comment">Comment*</label>
+                    <textarea name="comment" id="comment"></textarea>
+                    <?php
+                    showSuccess();
+                    showError();
+                    ?>
+                    <button type="submit" class="comment-btn">Comment</button>
+                </form>
+                <?php displayComment($pdo) ?>
+            </div>
+        </section>
+
     </main>
     <?php include "components/footer.php" ?>
 </body>

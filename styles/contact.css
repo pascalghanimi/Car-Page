@@ -8,10 +8,26 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+
 :root {
     --text-color: #2f3641;
     --hover: #f1f1f1;
     --btn-bg: rgb(68, 149, 241);
+    --secondary-btn-bg: #f4f4f4;
+    --border: #dbdbdb;
+    --light-text: rgb(168, 168, 168);
+}
+
+.logout-btn {
+    background: transparent;
+    border: 0;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.5s ease;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
 }
 
 .top-bar{
@@ -44,4 +60,245 @@ nav a:hover {
 .logo {
     width: 50px;
 
+}
+
+.header-image-container {
+    width: 100%;
+    height: 750px;
+}
+
+.header-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-container {
+    width: 90%;
+    margin: 70px auto 50px auto;
+    color: var(--text-color);
+}
+
+.info-container h1 {
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.info-container h2, .questions-container h2 {
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-top: 20px;
+}
+
+.questions-container h2 {
+    margin-bottom: 20px;
+}
+
+.info-container p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    max-width: 95ch;
+}
+
+.questions {
+   padding-top: 70px;
+   padding-bottom: 50px;
+    color: var(--text-color);
+    background: var(--hover);
+}
+
+.questions-container {
+    width: 90%;
+    margin: auto;
+}
+
+
+.accordion-header {
+    all: unset;
+    box-sizing: border-box;
+    border-left: 4px solid var(--light-text);
+    padding: 10px 30px;
+    border-bottom: 1px solid var(--light-text);
+    border-right: 1px solid var(--light-text);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    color: var(--text-color);
+    font-weight: bold;
+}
+.accordion-header:first-of-type {
+    border-top: 1px solid var(--light-text);
+    border-bottom: 1px solid var(--light-text);
+    width: 100%;
+}
+
+
+.accordion-body-container {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.accordion-body-container.active {
+    max-height: fit-content;
+    opacity: 1;
+    padding: 10px 30px;
+    background: white;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.contact-form {
+    width: 80%;
+    max-width: 400px;
+}
+
+.contact-container {
+    margin: 70px auto 50px auto;
+    width: 90%;
+}
+
+
+.contact-container h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+form input {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 5px;
+    background: var(--secondary-btn-bg);
+    border: 0;
+    outline: var(--border);
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+form textarea {
+  width: 100%;
+  height: 150px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  background: var(--secondary-btn-bg);
+  border: 1px solid var(--border);
+  outline: none;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  box-sizing: border-box; 
+}
+
+
+form label {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.signup-btn {
+    background: var(--btn-bg);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+footer a {
+    color: var(--text-color);
+    font-size: 0.75rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-btn {
+      background: var(--btn-bg);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.error {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    padding: 15px 10px;
+    background: rgb(250, 167, 167);
+    color: rgb(129, 55, 55);
+    font-weight: bold;
+}
+
+.success {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    padding: 15px 10px;
+    background: rgb(167, 250, 185);
+    color: rgb(55, 129, 86);
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        width: 40px;
+    }
+
+    nav a {
+        padding: 0;
+    }
+
+    .header-image-container {
+        height: 600px;
+    }
+
+    .info-container h1 {
+    font-weight: 400;
+    font-size: 2rem;
+}
+   .info-container h2 {
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.info-container p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    max-width: 100%;
+}
+
+
+.questions-container h2 {
+    font-size: 1.6rem;
+}
+
+.accordion-header {
+    max-width: 100%;
+}
+
+.contact-form {
+    max-width: 100%;
+    width: 100%;
+}
 }

@@ -12,6 +12,21 @@ body {
     --text-color: #2f3641;
     --hover: #f1f1f1;
     --btn-bg: rgb(68, 149, 241);
+    --secondary-btn-bg: #f4f4f4;
+    --border: #dbdbdb;
+    --light-text: rgb(168, 168, 168);
+}
+
+.logout-btn {
+    background: transparent;
+    border: 0;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.5s ease;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
 }
 
 .top-bar{
@@ -43,5 +58,87 @@ nav a:hover {
 
 .logo {
     width: 50px;
+
+}
+
+.header-video-container {
+    width: 100%;
+    height: 750px;
+}
+
+
+
+.header-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main {
+    width: 70%;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.event-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.event-heading {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.event-time {
+    margin-top: 7px;
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.event-location {
+    margin-top: 18px;
+    color: rgb(95, 95, 95);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.event-info {
+    margin-top: 7px;
+    font-size: 0.85rem;
+    color: var(--light-text);
+    max-width: 80ch;
+}
+
+footer {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+footer a {
+    color: var(--text-color);
+    font-size: 0.75rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 600px) {
+    .logo {
+        width: 40px;
+    }
+
+    nav a {
+        padding: 0;
+    }
+
+    .header-video-container {
+        height: 600px;
+    }
 
 }

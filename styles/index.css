@@ -12,6 +12,9 @@ body {
     --text-color: #2f3641;
     --hover: #f1f1f1;
     --btn-bg: rgb(68, 149, 241);
+    --secondary-btn-bg: #f4f4f4;
+    --border: #dbdbdb;
+    --light-text: rgb(168, 168, 168);
 }
 
 .logout-btn {
@@ -208,6 +211,7 @@ padding-bottom: 100px;
 .job-images-container {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .image-container::after {
@@ -230,7 +234,6 @@ padding-bottom: 100px;
     overflow: hidden;
     cursor: pointer;
 }
-
 
 
 .image-container img {
@@ -288,18 +291,18 @@ padding-bottom: 100px;
     }
 }
 
-.jobs-heading, .teams-heading {
+.jobs-heading, .teams-heading, .comments-heading {
     color: var(--text-color);
 }
 
-.jobs-heading h2, .teams-heading h2 {
+.jobs-heading h2, .teams-heading h2, .comments-heading h2 {
     font-size: 2.4rem;
     font-weight: normal;
     font-family: "Open Sans", sans-serif;
     line-height: 1;
 }
 
-.jobs-heading p, .teams-heading p {
+.jobs-heading p, .teams-heading p, .comments-heading p {
     margin-top: 30px;
     margin-bottom: 35px;
     font-size: 0.9rem;
@@ -317,6 +320,10 @@ padding-bottom: 100px;
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    box-shadow: 0 0 0 black;
+    z-index: 1;
 }
 
 .member-description {
@@ -349,6 +356,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 footer a {
@@ -356,4 +364,200 @@ footer a {
     font-size: 0.75rem;
     text-decoration: none;
     font-weight: bold;
+}
+
+.team-member-container {
+    perspective: 1000px;
+}
+
+.team-member-container img:hover {
+    transform: translateZ(60px) translateX(7px) rotateX(10deg) rotateY(15deg);
+    box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.4);
+}
+
+.comment-wrapper{
+    width: 90%;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form textarea {
+  width: 100%;
+  max-width: 700px;
+  height: 70px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  background: var(--secondary-btn-bg);
+  border: 1px solid var(--border);
+  outline: none;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  box-sizing: border-box; 
+}
+
+
+form label {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.comment-btn {
+    margin-top: 20px;
+    background: var(--btn-bg);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 15px 40px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.error {
+    margin-top: 10px;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    padding: 15px 10px;
+    background: rgb(250, 167, 167);
+    color: rgb(129, 55, 55);
+    font-weight: bold;
+    width: 100%;
+  max-width: 700px;
+}
+
+.success {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    padding: 15px 10px;
+    background: rgb(167, 250, 185);
+    color: rgb(55, 129, 86);
+    font-weight: bold;
+    width: 100%;
+  max-width: 700px;
+}
+
+.comment-container {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.comment-top-container{
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.time {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.comment {
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 800px) {
+      .jobs-heading p, .teams-heading p, .comments-heading p { width: 100%; }
+
+          .carousel-item {
+        min-width:300px;
+    }
+    .model-name {
+        font-size: 2rem;
+    }
+
+    .comments-heading p {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        width: 40px;
+    }
+
+    nav a {
+        padding: 0;
+    }
+
+    .header-img-container {
+        height: 600px;
+    }
+
+    #left {
+        left: 25px;
+    }
+
+    #right {
+        right: 25px;
+    }
+
+    .carousel-item {
+        min-width:300px;
+    }
+    .model-name {
+        font-size: 2rem;
+    }
+
+    .info-text {
+        font-size: 0.9rem;
+    }
+
+
+    .effect-container {
+        display: none;
+    }
+
+    .effect-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .team-member-container {
+        margin-bottom: 30px;
+    }
+    .team-member-container:last-of-type {
+        margin-bottom: 0;
+    }
+
+
+    form textarea {
+        max-width: 100%;
+    }
+    section {
+        max-width: 100%;
+    }
+
+    .job-images-container {
+        width: 100%;
+    }
+
+    .image-container {
+        width: 100%;
+    }
+
+  /* Jobs-Kacheln: keine fixe 500px-Breite */
+  .image-container { width: 100%; aspect-ratio: 1 / 1; }
+
+  /* Fließtexte: ch-Breite nicht erzwingen */
+  .jobs-heading p, .teams-heading p, .comments-heading p { width: 100%; }
+
+  /* Footer bricht sauber um */
+  footer { padding-inline: 12px; }
 }

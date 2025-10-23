@@ -135,3 +135,15 @@ form label {
     color: rgb(129, 55, 55);
     font-weight: bold;
 }
+
+@media screen and (max-width: 600px) {
+    .logo {
+        width: 40px;
+    }
+
+    nav a {
+        padding: 0;
+    }
+
+
+}
